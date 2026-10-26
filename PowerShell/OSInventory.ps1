@@ -1,5 +1,4 @@
 <#
-
 OS Inventory - gather OS info, work w/PS objects, create reports, export to CSV file.
 
 Basic query for OS data on local computer
