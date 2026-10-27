@@ -66,8 +66,7 @@ Add more useful info to the report and display it
 
 
 
-Export the new report to the 2 CSV files
-    Export updated report/OS info to the 2 CSV files
+Export the updated report to the 2 CSV files
     $report | export-csv ".\PowerShell\Reports\OSInventory.csv" -NoTypeInformation
     $report | export-csv ".\PowerShell\Reports\OSInventoryWithType.csv" 
 
