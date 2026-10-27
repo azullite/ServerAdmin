@@ -9,7 +9,7 @@ PowerShell
         Create a report object containing computer name, OS version, uptime in days, free disk space, total disk space, stopped service count, and health status.
 
     RepoStructure.ps1
-        Move all files to ServerAdmin folder. Move Reports folder to ServerAdmin folder. Delete PS, AD, Firewalls folders.
+        Move all files to ServerAdmin folder. Move Reports folder to ServerAdmin folder. Delete PS, AD, Firewalls folders. Update scripts with new paths.
 
 
     Reports
