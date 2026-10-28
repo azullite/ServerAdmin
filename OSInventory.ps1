@@ -67,8 +67,8 @@ Add more useful info to the report and display it
 
 
 Export the updated report to the 2 CSV files
-    $report | export-csv ".\PowerShell\Reports\OSInventory.csv" -NoTypeInformation
-    $report | export-csv ".\PowerShell\Reports\OSInventoryWithType.csv" 
+    $report | export-csv ".\Reports\OSInventory.csv" -NoTypeInformation
+    $report | export-csv ".\Reports\OSInventoryWithType.csv" 
 
     #>
 
@@ -83,7 +83,9 @@ Export the updated report to the 2 CSV files
         BuildNumber = $os.BuildNumber
         LastBootTime = $os.lastbootuptime
     }
-    $report | export-csv ".\PowerShell\Reports\OSInventory.csv" -NoTypeInformation
-    $report | export-csv ".\PowerShell\Reports\OSInventoryWithType.csv"
+    $report | export-csv ".\Reports\OSInventory.csv" -NoTypeInformation
+    $report | export-csv ".\Reports\OSInventoryWithType.csv"
 
     $report
+
+

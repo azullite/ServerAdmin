@@ -1,5 +1,5 @@
-
-Repository restructuring - Create files, move files, delete files. Update file paths in scripts.
+<#
+Repository restructuring - Create files, move files, delete files. Update file paths in scripts. Using hardcoded paths/fixed location.
 
 
 
@@ -23,5 +23,31 @@ Delete 3 folders from directory - AD, PS, Firewalls
 
 
 
-Bulk update file paths in a script
+Find items / .ps1 files with old paths in them, Bulk update file paths in scripts
+    Get-ChildItem "C:\GitHub\ServerAdmin" -Filter "*.ps1" -Recurse |
+    Select-String "C:/GitHub/ServerAdmin/PowerShell/Reports"
 
+
+    Get-ChildItem "C:\GitHub\ServerAdmin" -Filter "*.ps1" -Recurse |
+    ForEach-Object {
+            (Get-Content $_.FullName) -replace 'C:\\GitHub\\ServerAdmin\\PowerShell\\Reports', 
+            'C:\\GitHub\\ServerAdmin\\Reports' | 
+            Set-Content $_.FullName
+    }
+
+
+     Get-ChildItem "C:\GitHub\ServerAdmin" -Filter "*.ps1" -Recurse |     
+     Select-String -SimpleMatch ".\PowerShell\Reports\"
+
+
+
+    Get-ChildItem "C:\GitHub\ServerAdmin" -Filter "*.ps1" -Recurse |
+    ForEach-Object {
+        (Get-Content $_.FullName -Raw).
+         Replace('.\Reports\', '.\Reports\') |
+         Set-Content $_.FullName
+        }
+
+#>
+
+#More to follow

@@ -70,7 +70,7 @@ Add health status, then add it to the report object
 
 
 Export report to CSV file 
-    $report | Export-CSV -Path "C:/GitHub/ServerAdmin/PowerShell/Reports/ServerHealth.csv" -NoTypeInformation
+    $report | Export-CSV -Path "C:\\GitHub\\ServerAdmin\\Reports/ServerHealth.csv" -NoTypeInformation
 #>
 
 
@@ -115,4 +115,6 @@ Export report to CSV file
 
     $report | Add-Member -MemberType NoteProperty -Name HealthStatus -Value $HealthStatus
 
-    $report | Export-CSV -Path "C:/GitHub/ServerAdmin/PowerShell/Reports/ServerHealth.csv" -NoTypeInformation
+    $report | Export-CSV -Path "C:\\GitHub\\ServerAdmin\\Reports/ServerHealth.csv" -NoTypeInformation
+
+
