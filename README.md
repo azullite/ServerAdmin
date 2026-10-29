@@ -12,8 +12,8 @@ PowerShell
         Move all files to ServerAdmin folder. Move Reports folder to ServerAdmin folder. Delete PS, AD, Firewalls folders. Update scripts with new paths.
         NEXT: Demonstrate dynamic paths with $PSScriptRoot. 
 
-    ActiveDirectory.ps1 (CURRENT)
-        Retrieve AD users, check if accounts enabled or not, show last login, export results to CSV.
+    ActiveDirectory.ps1
+        Create ADUserAudit report, DisabledUsers report, InactiveUsers report & export these to 3 CSV files. 
 
     FirewallCompliance.ps1 (SOON-ISH)
         Automated firewall compliance and reporting system. Script verifies firewall configuration, tracked rules, exports timestamped compliance reports. 
@@ -23,4 +23,7 @@ PowerShell
         OSInventory.csv
         OSInventoryWithType.csv
         ServerHealth.csv
+        ADUserAudit.csv
+        DisabledUsers.csv
+        InactiveUsers.csv
 

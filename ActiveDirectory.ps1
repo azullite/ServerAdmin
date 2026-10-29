@@ -1,6 +1,6 @@
 <#
 
-Active Directory - Retrieve AD users, check if accounts enabled or not, show last login, export results to CSV.
+Active Directory - Audit all AD users, disabled AD user accounts, and inactive users. Export to 3 CSV files. 
 
 Get AD module, import module
     Get-Module ActiveDirectory -ListAvailable
@@ -58,7 +58,7 @@ Export disabled account report to CSV file
 Find inactive users
     $Date = (Get-Date).AddDays(-90)
 
-    Get-ADUser -Filter * -Properties LastLogonDate |
+    $inactiveusers = Get-ADUser -Filter * -Properties Department,LastLogonDate |
     Where-Object {
         $_.LastLogonDate -lt $Date
     }
@@ -87,3 +87,21 @@ $report = foreach ($user in $users) {
     }   
 
  $report | export-csv ".\Reports\ADUserAudit.csv" -notypeinformation
+
+
+
+ $DisabledUsers = Get-ADUser -Filter 'Enabled -eq $false' -Properties Name,Department,LastLogonDate
+    $DisabledUsers | Select-Object Name,Department,LastLogonDate |
+    Export-Csv ".\Reports\DisabledUsers.csv" -NoTypeInformation
+
+
+
+ $Date = (Get-Date).AddDays(-90)
+
+   $inactiveusers = Get-ADUser -Filter * -Properties Department,LastLogonDate |
+    Where-Object {
+        $_.LastLogonDate -lt $Date
+    }
+
+ $InactiveUsers | Select-Object Name,Department,LastLogonDate | 
+    Export-Csv ".\Reports\InactiveUsers.csv" -NoTypeInformation
