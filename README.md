@@ -6,7 +6,7 @@ PowerShell
         Gather local OS info, work with PS objects, create reports, export data to CSV files.
 
     ServerHealthCheck.ps1
-        Create a report object containing computer name, OS version, uptime in days, free disk space, total disk space, stopped service count, and health status.
+        Create a report object containing computer name, OS version, uptime in days, free disk space, total disk space, stopped service count.
 
     RepoStructure.ps1
         Move all files to ServerAdmin folder. Move Reports folder to ServerAdmin folder. Delete PS, AD, Firewalls folders. Update scripts with new paths.

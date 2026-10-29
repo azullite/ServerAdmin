@@ -58,17 +58,6 @@ Build a report object
 
 
 
-Add health status, then add it to the report object
-    if ($StoppedServices.Count -eq 0) {
-        $HealthStatus = "Healthy"
-    }
-    else {$HealthStatus = "Unhealthy"
-    }
-
-    $report | Add-Member -MemberType NoteProperty -Name HealthStatus -Value $HealthStatus
-
-
-
 Export report to CSV file 
     $report | Export-CSV -Path "C:\\GitHub\\ServerAdmin\\Reports/ServerHealth.csv" -NoTypeInformation
 #>
@@ -106,14 +95,7 @@ Export report to CSV file
         DiskTotalGB = $TotalSpaceGB
         StoppedServicesCount = $StoppedServices.Count
     }   
-
-    if ($StoppedServices.Count -eq 0) {
-        $HealthStatus = "Healthy"
-    }
-    else {$HealthStatus = "Unhealthy"
-    }
-
-    $report | Add-Member -MemberType NoteProperty -Name HealthStatus -Value $HealthStatus
+   
 
     $report | Export-CSV -Path "C:\\GitHub\\ServerAdmin\\Reports/ServerHealth.csv" -NoTypeInformation
 

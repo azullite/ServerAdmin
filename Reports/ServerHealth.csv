@@ -1,2 +1,2 @@
-"ComputerName","OSVersion","UptimeDays","DiskFreeGB","DiskTotalGB","StoppedServicesCount","HealthStatus"
-"GG-EZ","Microsoft Windows 10 Home","6","76.82","465.06","1","Unhealthy"
+"ComputerName","OSVersion","UptimeDays","DiskFreeGB","DiskTotalGB","StoppedServicesCount"
+"GG-EZ","Microsoft Windows 10 Home","8","23.48","465.06","1"
